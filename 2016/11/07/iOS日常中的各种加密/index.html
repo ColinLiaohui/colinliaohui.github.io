@@ -7,6 +7,8 @@
   <meta name="author" content="liaohui" />
 
   
+  <meta name="description" content="Hash_hmac256一般用于签名。1234567891011121314- (NSString *)hmac:(NSString *)plaintext withKey:(NSString *)key&amp;#123;    const char *cKey  = [key cStringUsingE" />
+  
 
   
 
@@ -71,7 +73,8 @@
     </header>
     <div class="entry">
       
-        
+        <h2 id="Hash-hmac256"><a href="#Hash-hmac256" class="headerlink" title="Hash_hmac256"></a>Hash_hmac256</h2><p>一般用于签名。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">- (NSString *)hmac:(NSString *)plaintext withKey:(NSString *)key</div><div class="line">&#123;</div><div class="line">    const char *cKey  = [key cStringUsingEncoding:NSASCIIStringEncoding];</div><div class="line">    const char *cData = [plaintext cStringUsingEncoding:NSASCIIStringEncoding];</div><div class="line">    unsigned char cHMAC[CC_SHA256_DIGEST_LENGTH];</div><div class="line">    CCHmac(kCCHmacAlgSHA256, cKey, strlen(cKey), cData, strlen(cData), cHMAC);</div><div class="line">    NSData *HMACData = [NSData dataWithBytes:cHMAC length:sizeof(cHMAC)];</div><div class="line">    const unsigned char *buffer = (const unsigned char *)[HMACData bytes];</div><div class="line">    NSMutableString *HMAC = [NSMutableString stringWithCapacity:HMACData.length * 2];</div><div class="line">    <span class="keyword">for</span> (int i = 0; i &lt; HMACData.length; ++i)&#123;</div><div class="line">        [HMAC appendFormat:@<span class="string">"%02x"</span>, buffer[i]];</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">return</span> HMAC;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
       
     </div>
     
