@@ -73,7 +73,7 @@
     </header>
     <div class="entry">
       
-        <h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>extends 只能是一个<br>implements可以有多个, 只有抽象方法。接口是抽象方法和常量属性集合。接口中只能够包含抽象方法和常量，不能有变量、初始化块、构造器。<br>[注]：<br>1.接口的修饰符只有两种：默认和public。(默认:只能在该包内使用)<br>2.接口内的变量会被设置成共有的、静态的和最终的字段<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">public interface Demo &#123;</div><div class="line">	int i=1;//相当于 public static final i=1;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>extends 只能是一个<br>implements可以有多个, 只有抽象方法。接口是抽象方法和常量属性集合。接口中只能够包含抽象方法和常量，不能有变量、初始化块、构造器。<br>[注] ：<br>1.接口的修饰符只有两种：默认和public。(默认:只能在该包内使用)<br>2.接口内的变量会被设置成共有的、静态的和最终的字段<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">public interface Demo &#123;</div><div class="line">	int i=1;//相当于 public static final i=1;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="接口的实现"><a href="#接口的实现" class="headerlink" title="接口的实现"></a>接口的实现</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">class 类名 implements 接口1,接口2,接口3&#123;</div><div class="line">	方法<span class="function"><span class="title">1</span></span>()&#123;</div><div class="line"></div><div class="line">	&#125;</div><div class="line">	方法<span class="function"><span class="title">2</span></span>()&#123;</div><div class="line"></div><div class="line">	&#125;</div><div class="line">	……</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>[注]<br>1.必须具体实现接口中提供的所有方法；<br>2.必须遵守重写的所有规则；<br>重写规则：<br>1.子类的重写方法不能抛出更大的异常；<br>2.子类的实现不能缩小访问范围<br>3.必须是相同的返回类型<br>如果继承多个接口，并且这几个接口都有相同的方法和相同的变量，那么相同的变量可以通过(接口名.变量名)的形式来访问，相同的方法将被其中的一个方法使用。</p>
 
@@ -166,7 +166,7 @@
       </li>
     
       <li>
-        <a href="/2016/11/08/static关键字/">static关键字</a>
+        <a href="/2016/11/08/static关键字/">Java学习笔记--static关键字</a>
       </li>
     
   </ul>
