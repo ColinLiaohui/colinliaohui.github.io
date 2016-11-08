@@ -64,6 +64,252 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2016-11-08T09:48:08.000Z"><a href="/2016/11/08/Java学习笔记-接口/">2016-11-08</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/11/08/Java学习笔记-接口/">Java学习笔记--接口</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href="/2016/11/08/Java学习笔记-接口/#comment" class="comment-link">评论</a>
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-11-08T09:18:44.000Z"><a href="/2016/11/08/Java学习笔记-抽象类/">2016-11-08</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/11/08/Java学习笔记-抽象类/">Java学习笔记--抽象类</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><h3 id="抽象类的定义"><a href="#抽象类的定义" class="headerlink" title="抽象类的定义"></a>抽象类的定义</h3><p>抽象类是为子类提供与一个规范。<br>修饰符 abstract 类名{<br>    //类体<br>    修饰符 abstract 返回值类型 方法名(参数列表);<br>}<br>抽象方法没有方法体：public abstract class Test();<br>非抽象方法有方法体：public abstract class Test() {</p>
+<pre><code>public abstract void test();
+</code></pre><p>}<br>如果定义一个抽象类，则这个类中至少有一个抽象方法。</p>
+<h3 id="抽象类的使用"><a href="#抽象类的使用" class="headerlink" title="抽象类的使用"></a>抽象类的使用</h3><p>@override  可以用来检测是否重写正确。<br>1、一个类继承了抽象类，就必须要重写该类的抽象方法。<br>2、如果有一个类没有重写抽象类的方法，则这个类也要定义为抽象类。</p>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href="/2016/11/08/Java学习笔记-抽象类/#comment" class="comment-link">评论</a>
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-11-08T08:34:47.000Z"><a href="/2016/11/08/Java学习笔记-包/">2016-11-08</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/11/08/Java学习笔记-包/">Java学习笔记--包</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="包"><a href="#包" class="headerlink" title="包"></a>包</h2><p>不同的包里面的类名可以相同。</p>
+<h3 id="未命名包"><a href="#未命名包" class="headerlink" title="未命名包"></a>未命名包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">public class Test &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="命名包"><a href="#命名包" class="headerlink" title="命名包"></a>命名包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">package StudyJavaDemo;</div><div class="line"></div><div class="line">public class Test &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href="/2016/11/08/Java学习笔记-包/#comment" class="comment-link">评论</a>
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-11-08T08:21:20.000Z"><a href="/2016/11/08/Java学习笔记-final关键字/">2016-11-08</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/11/08/Java学习笔记-final关键字/">Java学习笔记--final关键字</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="1-final修饰变量"><a href="#1-final修饰变量" class="headerlink" title="1.final修饰变量"></a>1.final修饰变量</h3><p>恒定不变的属性，可以使用final在进行修饰。<br>变量名建议全部使用大写。<br>final修饰的变量不能改变，如果在程序中重新赋值，编译会报错。<br>public static final String SKIN_COLOR=”yellow”;<br>public static final int EYE_COUNT=2;<br>public static final String EYE_COLOR=”black”;</p>
+<h3 id="2-final修改方法"><a href="#2-final修改方法" class="headerlink" title="2.final修改方法"></a>2.final修改方法</h3><p>任何继承类无法覆盖该方法。但是重载不会受到限制。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">public class Colin &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">class Tree&#123;</div><div class="line">	public final void <span class="function"><span class="title">develop</span></span>()&#123;</div><div class="line">		System.out.println(<span class="string">"123"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">class Oak extends Tree&#123;</div><div class="line">	public <span class="function"><span class="title">Oak</span></span>()&#123;</div><div class="line">		System.out.print(<span class="string">"456"</span>);</div><div class="line">	&#125;</div><div class="line">	//被final修饰的develop被重载</div><div class="line">	public void develop(String name)&#123;</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="3-final修饰类名"><a href="#3-final修饰类名" class="headerlink" title="3.final修饰类名"></a>3.final修饰类名</h3><p>该类不能作为任何类的父类。<br>类中的方法会全部被自动定义为final类型。</p>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href="/2016/11/08/Java学习笔记-final关键字/#comment" class="comment-link">评论</a>
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-11-08T07:55:15.000Z"><a href="/2016/11/08/static关键字/">2016-11-08</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/11/08/static关键字/">static关键字</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="1-静态变量"><a href="#1-静态变量" class="headerlink" title="1.静态变量"></a>1.静态变量</h3><p>静态变量是属于类的，和对象没有关系。非静态变量是属于某个对象的，每个对象都有该数据的副本，静态变量只有一个。<br>访问静态变量是通过（类名.变量名）来访问的<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">public class Colin &#123;</div><div class="line"></div><div class="line">	int commonint = 0;//普通变量</div><div class="line">	static int staticint = 0;//静态变量</div><div class="line">	</div><div class="line">	Colin(int x)&#123;</div><div class="line">		this.commonint = x;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		Colin c1 = new Colin(1);</div><div class="line">		Colin c2 = new Colin(2);</div><div class="line">		//打印结果</div><div class="line">		//c1.commonint:1</div><div class="line">		//c1.commonint:2</div><div class="line">		c1.staticint = 1;</div><div class="line">		//c1.commonint:1</div><div class="line">		//c1.commonint:1</div><div class="line">		c2.staticint = 20;</div><div class="line">		//c1.commonint:20</div><div class="line">		//c1.commonint:20</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="2-静态方法"><a href="#2-静态方法" class="headerlink" title="2.静态方法"></a>2.静态方法</h3><p>用static修饰的方法。<br>访问静态方法是通过（类名.方法名）来调用的。<br>注：1.静态方法不能访问非静态变量；2.非静态方法可以访问静态变量<br>生命周期：静态属性或方法是在类加载的时候产生的。非静态的属性或方法是在new的时候产生的。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">public class Colin &#123;</div><div class="line"></div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		ColinMethod.printString(<span class="string">"colin"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class ColinMethod&#123;</div><div class="line">	static void <span class="built_in">print</span>String(String str)&#123;</div><div class="line">		System.out.println(str);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">`</div></pre></td></tr></table></figure></p>
+<h3 id="3-静态常量"><a href="#3-静态常量" class="headerlink" title="3.静态常量"></a>3.静态常量</h3><p>定义例子：public static final int x=123;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public class Colin &#123;</div><div class="line"></div><div class="line">	static int x=0;</div><div class="line">	static&#123;</div><div class="line">		x=100;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="title">Colin</span></span>()&#123;</div><div class="line">		System.out.println(x);</div><div class="line">		//打印结果：100</div><div class="line">	&#125;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		new Colin();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href="/2016/11/08/static关键字/#comment" class="comment-link">评论</a>
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-11-08T07:39:13.000Z"><a href="/2016/11/08/Java学习笔记-对象的创建和使用/">2016-11-08</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/11/08/Java学习笔记-对象的创建和使用/">Java学习笔记--对象的创建和使用</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">public class Colin &#123;</div><div class="line"></div><div class="line">	String name;</div><div class="line">	String stuno;</div><div class="line">	String sex;</div><div class="line">	int age;</div><div class="line">	</div><div class="line">	public void <span class="function"><span class="title">study</span></span>()&#123;</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	public void <span class="function"><span class="title">play</span></span>()&#123;</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//主方法</div><div class="line">public class Test &#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		//申明一个对象,c是一个实例的引用</div><div class="line">		Colin c=new Colin();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href="/2016/11/08/Java学习笔记-对象的创建和使用/#comment" class="comment-link">评论</a>
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2016-11-08T07:02:04.000Z"><a href="/2016/11/08/Java学习笔记/">2016-11-08</a></time>
       
       
@@ -74,10 +320,10 @@
     </header>
     <div class="entry">
       
-        <p>##构造方法<br>用于初始化参数。所有的数字变量全部设置为0，所有的boolean类型全部设置为false，所有的对象类型全部设置为null。</p>
+        <h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><p>用于初始化参数。所有的数字变量全部设置为0，所有的boolean类型全部设置为false，所有的对象类型全部设置为null。</p>
 <p>###设计自己的构造方法：<br>1.方法名和类名相同；<br>2.没有返回值<br>注：如果实现了有参的构造方法，系统不再自动提供无参的构造方法，必须自己实现。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">public class Colin &#123;</div><div class="line"></div><div class="line">	String name;</div><div class="line">	String sex;</div><div class="line">	int age;</div><div class="line">	</div><div class="line">	//无参构造方法</div><div class="line">	<span class="function"><span class="title">Colin</span></span>()&#123;</div><div class="line">		name = null;</div><div class="line">		sex = null;</div><div class="line">		age = 0;</div><div class="line">	&#125;</div><div class="line">	//有参构造方法</div><div class="line">	Colin(String name, String sex, int age)&#123;</div><div class="line">		this.name=name;</div><div class="line">		this.sex=sex;</div><div class="line">		this.age=age;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		//有参数</div><div class="line">		Colin c = new Colin();</div><div class="line">		//无参数</div><div class="line">		Colin co = new Colin(<span class="string">"colin"</span>,<span class="string">"man"</span>,25);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>##方法的重载<br>在同一个类中可以有多个方法共享同一个名称，只要他们的参数不一样就行。<br>根据参数类型和参数数量来决定要调用的方法。<br>重载：具有相同的方法名称，不同的参数列表。<br>不同的参数列表指的是：参数类型不同、参数数量不同、参数顺序不同。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public class Colining &#123;</div><div class="line">	public String study(String name)&#123;</div><div class="line">		String username = name;</div><div class="line">		<span class="built_in">return</span> username;</div><div class="line">	&#125;</div><div class="line">	public String <span class="function"><span class="title">study</span></span>()&#123;</div><div class="line">		<span class="built_in">return</span> <span class="string">"colin"</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="方法的重载"><a href="#方法的重载" class="headerlink" title="方法的重载"></a>方法的重载</h2><p>在同一个类中可以有多个方法共享同一个名称，只要他们的参数不一样就行。<br>根据参数类型和参数数量来决定要调用的方法。<br>重载：具有相同的方法名称，不同的参数列表。<br>不同的参数列表指的是：参数类型不同、参数数量不同、参数顺序不同。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public class Colining &#123;</div><div class="line">	public String study(String name)&#123;</div><div class="line">		String username = name;</div><div class="line">		<span class="built_in">return</span> username;</div><div class="line">	&#125;</div><div class="line">	public String <span class="function"><span class="title">study</span></span>()&#123;</div><div class="line">		<span class="built_in">return</span> <span class="string">"colin"</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -216,15 +462,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/2016/11/08/Java学习笔记/">Java学习笔记--方法</a>
+        <a href="/2016/11/08/Java学习笔记-接口/">Java学习笔记--接口</a>
       </li>
     
       <li>
-        <a href="/2015/11/07/文字字符串排序/">文字字符串排序</a>
+        <a href="/2016/11/08/Java学习笔记-抽象类/">Java学习笔记--抽象类</a>
       </li>
     
       <li>
-        <a href="/2015/11/07/iOS日常中的各种加密/">iOS日常中的各种加密</a>
+        <a href="/2016/11/08/Java学习笔记-包/">Java学习笔记--包</a>
+      </li>
+    
+      <li>
+        <a href="/2016/11/08/Java学习笔记-final关键字/">Java学习笔记--final关键字</a>
+      </li>
+    
+      <li>
+        <a href="/2016/11/08/static关键字/">static关键字</a>
       </li>
     
   </ul>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   
-  <title>iOS日常中的各种加密 | colin</title>
+  <title>Java学习笔记--抽象类 | colin</title>
   <meta name="author" content="liaohui" />
 
   
@@ -14,7 +14,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-  <meta property="og:title" content="iOS日常中的各种加密" />
+  <meta property="og:title" content="Java学习笔记--抽象类" />
   <meta property="og:site_name" content="colin" />
 
   
@@ -63,18 +63,20 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-11-07T03:59:11.000Z"><a href="/2015/11/07/iOS日常中的各种加密/">2015-11-07</a></time>
+        <time datetime="2016-11-08T09:18:44.000Z"><a href="/2016/11/08/Java学习笔记-抽象类/">2016-11-08</a></time>
       
       
   
-    <h1 class="title">iOS日常中的各种加密</h1>
+    <h1 class="title">Java学习笔记--抽象类</h1>
   
 
     </header>
     <div class="entry">
       
-        <h2 id="Hash-hmac-SHA256"><a href="#Hash-hmac-SHA256" class="headerlink" title="Hash_hmac SHA256"></a>Hash_hmac SHA256</h2><p>一般用于签名计算。<br>[plaintext]：需要加密的参数字符串。(如：username=”zhangsan”&amp;&amp;passwork=”123456”&amp;&amp;sex=”男”)<br>[key]：通讯密钥<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">- (NSString *)hmac:(NSString *)plaintext withKey:(NSString *)key</div><div class="line">&#123;</div><div class="line">    const char *cKey  = [key cStringUsingEncoding:NSASCIIStringEncoding];</div><div class="line">    const char *cData = [plaintext cStringUsingEncoding:NSASCIIStringEncoding];</div><div class="line">    unsigned char cHMAC[CC_SHA256_DIGEST_LENGTH];</div><div class="line">    CCHmac(kCCHmacAlgSHA256, cKey, strlen(cKey), cData, strlen(cData), cHMAC);</div><div class="line">    NSData *HMACData = [NSData dataWithBytes:cHMAC length:sizeof(cHMAC)];</div><div class="line">    const unsigned char *buffer = (const unsigned char *)[HMACData bytes];</div><div class="line">    NSMutableString *HMAC = [NSMutableString stringWithCapacity:HMACData.length * 2];</div><div class="line">    <span class="keyword">for</span> (int i = 0; i &lt; HMACData.length; ++i)&#123;</div><div class="line">        [HMAC appendFormat:@<span class="string">"%02x"</span>, buffer[i]];</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">return</span> HMAC;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="NSData数据加密"><a href="#NSData数据加密" class="headerlink" title="NSData数据加密"></a>NSData数据加密</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">- (NSString *)getFileMD5WithData</div><div class="line">&#123;</div><div class="line">    const char *str = [self bytes];</div><div class="line">    unsigned char result[CC_MD5_DIGEST_LENGTH];</div><div class="line">    CC_MD5(str, (CC_LONG)self.length, result);</div><div class="line">    </div><div class="line">    NSMutableString *<span class="built_in">hash</span> = [NSMutableString string];</div><div class="line">    <span class="keyword">for</span> (int i = 0; i &lt; CC_MD5_DIGEST_LENGTH; i++) &#123;</div><div class="line">        [<span class="built_in">hash</span> appendFormat:@<span class="string">"%02X"</span>, result[i]];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="built_in">return</span> [<span class="built_in">hash</span> lowercaseString];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><h3 id="抽象类的定义"><a href="#抽象类的定义" class="headerlink" title="抽象类的定义"></a>抽象类的定义</h3><p>抽象类是为子类提供与一个规范。<br>修饰符 abstract 类名{<br>    //类体<br>    修饰符 abstract 返回值类型 方法名(参数列表);<br>}<br>抽象方法没有方法体：public abstract class Test();<br>非抽象方法有方法体：public abstract class Test() {</p>
+<pre><code>public abstract void test();
+</code></pre><p>}<br>如果定义一个抽象类，则这个类中至少有一个抽象方法。</p>
+<h3 id="抽象类的使用"><a href="#抽象类的使用" class="headerlink" title="抽象类的使用"></a>抽象类的使用</h3><p>@override  可以用来检测是否重写正确。<br>1、一个类继承了抽象类，就必须要重写该类的抽象方法。<br>2、如果有一个类没有重写抽象类的方法，则这个类也要定义为抽象类。</p>
 
       
     </div>
@@ -82,7 +84,7 @@
     <footer>
         <div class="alignright">
           
-          <a href="/2015/11/07/iOS日常中的各种加密/#comment" class="comment-link">评论</a>
+          <a href="/2016/11/08/Java学习笔记-抽象类/#comment" class="comment-link">评论</a>
           
           <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
         </div>
@@ -99,7 +101,7 @@
   <h1 class="title">留言</h1>
 
   <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="post-iOS日常中的各种加密" data-title="iOS日常中的各种加密" data-url="http://liaohui.win/2015/11/07/iOS日常中的各种加密/"></div>
+  <div class="ds-thread" data-thread-key="post-Java学习笔记-抽象类" data-title="Java学习笔记--抽象类" data-url="http://liaohui.win/2016/11/08/Java学习笔记-抽象类/"></div>
   <!-- 多说评论框 end -->
   <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
   <script type="text/javascript">

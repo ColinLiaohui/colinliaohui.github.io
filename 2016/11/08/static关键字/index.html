@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  
+  <title>static关键字 | colin</title>
+  <meta name="author" content="liaohui" />
+
+  
+  <meta name="description" content="iOS开发 iOS知识分享" />
+  
+
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <meta property="og:title" content="static关键字" />
+  <meta property="og:site_name" content="colin" />
+
+  
+  
+
+  
+    <meta property="og:image" content="undefined" />
+  
+
+  
+  <link href="/css/images/favicon.ico" rel="icon" />
+  
+
+  <link rel="alternate" href="/atom.xml" title="colin" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">colin</a></h1>
+  <h2><a href="/">For you i will become more excelient. Work hard，just for a better life.</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-11-08T07:55:15.000Z"><a href="/2016/11/08/static关键字/">2016-11-08</a></time>
+      
+      
+  
+    <h1 class="title">static关键字</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="1-静态变量"><a href="#1-静态变量" class="headerlink" title="1.静态变量"></a>1.静态变量</h3><p>静态变量是属于类的，和对象没有关系。非静态变量是属于某个对象的，每个对象都有该数据的副本，静态变量只有一个。<br>访问静态变量是通过（类名.变量名）来访问的<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">public class Colin &#123;</div><div class="line"></div><div class="line">	int commonint = 0;//普通变量</div><div class="line">	static int staticint = 0;//静态变量</div><div class="line">	</div><div class="line">	Colin(int x)&#123;</div><div class="line">		this.commonint = x;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		Colin c1 = new Colin(1);</div><div class="line">		Colin c2 = new Colin(2);</div><div class="line">		//打印结果</div><div class="line">		//c1.commonint:1</div><div class="line">		//c1.commonint:2</div><div class="line">		c1.staticint = 1;</div><div class="line">		//c1.commonint:1</div><div class="line">		//c1.commonint:1</div><div class="line">		c2.staticint = 20;</div><div class="line">		//c1.commonint:20</div><div class="line">		//c1.commonint:20</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="2-静态方法"><a href="#2-静态方法" class="headerlink" title="2.静态方法"></a>2.静态方法</h3><p>用static修饰的方法。<br>访问静态方法是通过（类名.方法名）来调用的。<br>注：1.静态方法不能访问非静态变量；2.非静态方法可以访问静态变量<br>生命周期：静态属性或方法是在类加载的时候产生的。非静态的属性或方法是在new的时候产生的。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">public class Colin &#123;</div><div class="line"></div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		ColinMethod.printString(<span class="string">"colin"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class ColinMethod&#123;</div><div class="line">	static void <span class="built_in">print</span>String(String str)&#123;</div><div class="line">		System.out.println(str);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">`</div></pre></td></tr></table></figure></p>
+<h3 id="3-静态常量"><a href="#3-静态常量" class="headerlink" title="3.静态常量"></a>3.静态常量</h3><p>定义例子：public static final int x=123;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public class Colin &#123;</div><div class="line"></div><div class="line">	static int x=0;</div><div class="line">	static&#123;</div><div class="line">		x=100;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="title">Colin</span></span>()&#123;</div><div class="line">		System.out.println(x);</div><div class="line">		//打印结果：100</div><div class="line">	&#125;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		new Colin();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href="/2016/11/08/static关键字/#comment" class="comment-link">评论</a>
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="post-static关键字" data-title="static关键字" data-url="http://liaohui.win/2016/11/08/static关键字/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:'colin'};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+       || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:liaohui.win">
+  </form>
+</div>
+
+  <div class="widget tag">
+  <h3 class="title">关于我</h3>
+  <div class="entry">
+    <p>邮箱：liaohuikk@163.com</p>
+  </div>
+</div>
+
+  <div class="widget tag">
+  <h3 class="title">赞助我</h3>
+  <div class="entry">
+    <img src='/css/images/MyWXCode.png' style='width:100%;background:rgba(255,255,255,0.6)' />
+  </div>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2016/11/08/Java学习笔记-接口/">Java学习笔记--接口</a>
+      </li>
+    
+      <li>
+        <a href="/2016/11/08/Java学习笔记-抽象类/">Java学习笔记--抽象类</a>
+      </li>
+    
+      <li>
+        <a href="/2016/11/08/Java学习笔记-包/">Java学习笔记--包</a>
+      </li>
+    
+      <li>
+        <a href="/2016/11/08/Java学习笔记-final关键字/">Java学习笔记--final关键字</a>
+      </li>
+    
+      <li>
+        <a href="/2016/11/08/static关键字/">static关键字</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+  
+
+  <div class="widget tag">
+  <h3 class="title">统计</h3>
+  <div class="entry">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260759712'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260759712%26online%3D1' type='text/javascript'%3E%3C/script%3E"));</script>
+  </div>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  <p>
+  
+  &copy; 2016 liaohui
+  
+  All rights reserved.</p>
+</div>
+<div class="clearfix"></div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id='bg'></div>
+</body>
+</html>
