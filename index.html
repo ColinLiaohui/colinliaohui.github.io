@@ -64,6 +64,49 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2016-11-09T01:48:20.000Z"><a href="/2016/11/09/Java学习笔记-内部类/">2016-11-09</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/11/09/Java学习笔记-内部类/">Java学习笔记--内部类</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>###内部类的构造：<br>内部类相当于外部类的成员属性。<br>Outer out=new Outer();<br>Outer.Inner=out.new Outer();</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">public class Demo&#123;</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		//接口类型(抽象类)不能直接进行实例化</div><div class="line">		Outer out=new <span class="function"><span class="title">Outer</span></span>()&#123;</div><div class="line">			@Override</div><div class="line">			public void <span class="function"><span class="title">show</span></span>() &#123;</div><div class="line">				System.out.println(<span class="string">"匿名内部类的show方法"</span>);</div><div class="line">			&#125;</div><div class="line">		&#125;;</div><div class="line">		out.show();</div><div class="line">		</div><div class="line">		Parent p=new <span class="function"><span class="title">Parent</span></span>()&#123;</div><div class="line">			public void <span class="function"><span class="title">work</span></span>()&#123;</div><div class="line">				System.out.println(<span class="string">"son is working"</span>);</div><div class="line">			&#125;</div><div class="line">		&#125;;</div><div class="line">		p.work();</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//接口</div><div class="line">interface Outer&#123;</div><div class="line">	public void show();</div><div class="line">&#125;</div><div class="line">//父类</div><div class="line">class Parent&#123;</div><div class="line">	public void <span class="function"><span class="title">work</span></span>()&#123;</div><div class="line">		System.out.println(<span class="string">"parent is working"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h2><p>在类的局部位置进行轻易的类。<br>在局部内部类里面可以访问外部类的成员变量。<br>局部内部类访问方法中的局部变量的时候，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">public class Test &#123;</div><div class="line">	</div><div class="line">&#125;</div><div class="line"></div><div class="line">class ColinL&#123;</div><div class="line">	private String name;</div><div class="line">	public void work(final int i)&#123;</div><div class="line">		final int count = 0;</div><div class="line">		class In&#123;</div><div class="line">			public void <span class="function"><span class="title">inWorking</span></span>()&#123;</div><div class="line">				System.out.println(name);</div><div class="line">				System.out.println(i);</div><div class="line">				System.out.println(count);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="静态内部类"><a href="#静态内部类" class="headerlink" title="静态内部类"></a>静态内部类</h2><p>静态内部类中可以申明static成员变量：非静态内部类中不可以<br>静态内部类不可以使用外部类的非静态成员变量<br>创建静态内部类的对象，不需要其外部类的对象<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public class Test &#123;</div><div class="line">	static int count=1;</div><div class="line">	</div><div class="line">		static class Inner&#123;</div><div class="line">			public void <span class="function"><span class="title">working</span></span>()&#123;</div><div class="line">				System.out.println(count);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href="/2016/11/09/Java学习笔记-内部类/#comment" class="comment-link">评论</a>
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2016-11-08T09:48:08.000Z"><a href="/2016/11/08/Java学习笔记-接口/">2016-11-08</a></time>
       
       
@@ -466,6 +509,10 @@
   <ul class="entry">
     
       <li>
+        <a href="/2016/11/09/Java学习笔记-内部类/">Java学习笔记--内部类</a>
+      </li>
+    
+      <li>
         <a href="/2016/11/08/Java学习笔记-接口/">Java学习笔记--接口</a>
       </li>
     
@@ -479,10 +526,6 @@
     
       <li>
         <a href="/2016/11/08/Java学习笔记-final关键字/">Java学习笔记--final关键字</a>
-      </li>
-    
-      <li>
-        <a href="/2016/11/08/static关键字/">Java学习笔记--static关键字</a>
       </li>
     
   </ul>
