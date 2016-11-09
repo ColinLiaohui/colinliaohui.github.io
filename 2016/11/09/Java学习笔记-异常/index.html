@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   
-  <title>Java学习笔记--final关键字 | colin</title>
+  <title>Java学习笔记--异常 | colin</title>
   <meta name="author" content="liaohui" />
 
   
@@ -14,7 +14,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-  <meta property="og:title" content="Java学习笔记--final关键字" />
+  <meta property="og:title" content="Java学习笔记--异常" />
   <meta property="og:site_name" content="colin" />
 
   
@@ -63,19 +63,18 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2016-11-08T08:21:20.000Z"><a href="/2016/11/08/Java学习笔记-final关键字/">2016-11-08</a></time>
+        <time datetime="2016-11-09T03:01:25.000Z"><a href="/2016/11/09/Java学习笔记-异常/">2016-11-09</a></time>
       
       
   
-    <h1 class="title">Java学习笔记--final关键字</h1>
+    <h1 class="title">Java学习笔记--异常</h1>
   
 
     </header>
     <div class="entry">
       
-        <h3 id="1-final修饰变量"><a href="#1-final修饰变量" class="headerlink" title="1.final修饰变量"></a>1.final修饰变量</h3><p>恒定不变的属性，可以使用final在进行修饰。<br>变量名建议全部使用大写。<br>final修饰的变量不能改变，如果在程序中重新赋值，编译会报错。<br>public static final String SKIN_COLOR=”yellow”;<br>public static final int EYE_COUNT=2;<br>public static final String EYE_COLOR=”black”;</p>
-<h3 id="2-final修改方法"><a href="#2-final修改方法" class="headerlink" title="2.final修改方法"></a>2.final修改方法</h3><p>任何继承类无法覆盖该方法。但是重载不会受到限制。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">public class Colin &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">class Tree&#123;</div><div class="line">	public final void <span class="function"><span class="title">develop</span></span>()&#123;</div><div class="line">		System.out.println(<span class="string">"123"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">class Oak extends Tree&#123;</div><div class="line">	public <span class="function"><span class="title">Oak</span></span>()&#123;</div><div class="line">		System.out.print(<span class="string">"456"</span>);</div><div class="line">	&#125;</div><div class="line">	//被final修饰的develop被重载</div><div class="line">	public void develop(String name)&#123;</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="3-final修饰类名"><a href="#3-final修饰类名" class="headerlink" title="3.final修饰类名"></a>3.final修饰类名</h3><p>该类不能作为任何类的父类。<br>类中的方法会全部被自动定义为final类型。</p>
+        <p>##异常<br>1.异常关键字：<br>try：把可能发生异常的代码包起来，当发生异常时，将异常抛出<br>catch：捕获异常并处理<br>finally：不管是否发生异常，都会执行<br>throw：手动引发一个异常<br>throws：定义任何被调用方法的异常</p>
+<p>2.异常出现的原因<br>1）用户输入有误；<br>2）代码的错误；<br>3）环境的因素</p>
 
       
     </div>
@@ -83,7 +82,7 @@
     <footer>
         <div class="alignright">
           
-          <a href="/2016/11/08/Java学习笔记-final关键字/#comment" class="comment-link">评论</a>
+          <a href="/2016/11/09/Java学习笔记-异常/#comment" class="comment-link">评论</a>
           
           <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
         </div>
@@ -100,7 +99,7 @@
   <h1 class="title">留言</h1>
 
   <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="post-Java学习笔记-final关键字" data-title="Java学习笔记--final关键字" data-url="http://liaohui.win/2016/11/08/Java学习笔记-final关键字/"></div>
+  <div class="ds-thread" data-thread-key="post-Java学习笔记-异常" data-title="Java学习笔记--异常" data-url="http://liaohui.win/2016/11/09/Java学习笔记-异常/"></div>
   <!-- 多说评论框 end -->
   <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
   <script type="text/javascript">

@@ -64,6 +64,47 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2016-11-09T03:01:25.000Z"><a href="/2016/11/09/Java学习笔记-异常/">2016-11-09</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/11/09/Java学习笔记-异常/">Java学习笔记--异常</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>##异常<br>1.异常关键字：<br>try：把可能发生异常的代码包起来，当发生异常时，将异常抛出<br>catch：捕获异常并处理<br>finally：不管是否发生异常，都会执行<br>throw：手动引发一个异常<br>throws：定义任何被调用方法的异常</p>
+<p>2.异常出现的原因<br>1）用户输入有误；<br>2）代码的错误；<br>3）环境的因素</p>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href="/2016/11/09/Java学习笔记-异常/#comment" class="comment-link">评论</a>
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2016-11-09T01:48:20.000Z"><a href="/2016/11/09/Java学习笔记-内部类/">2016-11-09</a></time>
       
       
@@ -433,50 +474,13 @@
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-11-07T03:59:11.000Z"><a href="/2015/11/07/iOS日常中的各种加密/">2015-11-07</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/11/07/iOS日常中的各种加密/">iOS日常中的各种加密</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h2 id="Hash-hmac-SHA256"><a href="#Hash-hmac-SHA256" class="headerlink" title="Hash_hmac SHA256"></a>Hash_hmac SHA256</h2><p>一般用于签名计算。<br>[plaintext]：需要加密的参数字符串。(如：username=”zhangsan”&amp;&amp;passwork=”123456”&amp;&amp;sex=”男”)<br>[key]：通讯密钥<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">- (NSString *)hmac:(NSString *)plaintext withKey:(NSString *)key</div><div class="line">&#123;</div><div class="line">    const char *cKey  = [key cStringUsingEncoding:NSASCIIStringEncoding];</div><div class="line">    const char *cData = [plaintext cStringUsingEncoding:NSASCIIStringEncoding];</div><div class="line">    unsigned char cHMAC[CC_SHA256_DIGEST_LENGTH];</div><div class="line">    CCHmac(kCCHmacAlgSHA256, cKey, strlen(cKey), cData, strlen(cData), cHMAC);</div><div class="line">    NSData *HMACData = [NSData dataWithBytes:cHMAC length:sizeof(cHMAC)];</div><div class="line">    const unsigned char *buffer = (const unsigned char *)[HMACData bytes];</div><div class="line">    NSMutableString *HMAC = [NSMutableString stringWithCapacity:HMACData.length * 2];</div><div class="line">    <span class="keyword">for</span> (int i = 0; i &lt; HMACData.length; ++i)&#123;</div><div class="line">        [HMAC appendFormat:@<span class="string">"%02x"</span>, buffer[i]];</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">return</span> HMAC;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="NSData数据加密"><a href="#NSData数据加密" class="headerlink" title="NSData数据加密"></a>NSData数据加密</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">- (NSString *)getFileMD5WithData</div><div class="line">&#123;</div><div class="line">    const char *str = [self bytes];</div><div class="line">    unsigned char result[CC_MD5_DIGEST_LENGTH];</div><div class="line">    CC_MD5(str, (CC_LONG)self.length, result);</div><div class="line">    </div><div class="line">    NSMutableString *<span class="built_in">hash</span> = [NSMutableString string];</div><div class="line">    <span class="keyword">for</span> (int i = 0; i &lt; CC_MD5_DIGEST_LENGTH; i++) &#123;</div><div class="line">        [<span class="built_in">hash</span> appendFormat:@<span class="string">"%02X"</span>, result[i]];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="built_in">return</span> [<span class="built_in">hash</span> lowercaseString];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href="/2015/11/07/iOS日常中的各种加密/#comment" class="comment-link">评论</a>
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
 
 <nav id="pagination">
   
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+  </nav>
+
 </nav>
 </div></div>
     <aside id="sidebar" class="alignright">
@@ -509,6 +513,10 @@
   <ul class="entry">
     
       <li>
+        <a href="/2016/11/09/Java学习笔记-异常/">Java学习笔记--异常</a>
+      </li>
+    
+      <li>
         <a href="/2016/11/09/Java学习笔记-内部类/">Java学习笔记--内部类</a>
       </li>
     
@@ -522,10 +530,6 @@
     
       <li>
         <a href="/2016/11/08/Java学习笔记-包/">Java学习笔记--包</a>
-      </li>
-    
-      <li>
-        <a href="/2016/11/08/Java学习笔记-final关键字/">Java学习笔记--final关键字</a>
       </li>
     
   </ul>
