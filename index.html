@@ -64,6 +64,46 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2017-01-09T07:26:12.000Z"><a href="/2017/01/09/tabBarItem点击动画/">2017-01-09</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/01/09/tabBarItem点击动画/">tabBarItem点击动画</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>##tabBarItem点击时添加动画效果<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item</div><div class="line">&#123;</div><div class="line">    NSInteger selectIndex = [tabBar.items indexOfObject:item];</div><div class="line">    <span class="keyword">if</span> (selectIndex != _index) [self animationWithIndex:selectIndex];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)animationWithIndex:(NSInteger) index &#123;</div><div class="line">    NSMutableArray *tabbarbuttonArray = [NSMutableArray array];</div><div class="line">    <span class="keyword">for</span> (UIView *tabBarButton <span class="keyword">in</span> self.tabBar.subviews)</div><div class="line">        <span class="keyword">if</span> ([tabBarButton isKindOfClass:NSClassFromString(@<span class="string">"UITabBarButton"</span>)])</div><div class="line">            [tabbarbuttonArray addObject:tabBarButton];</div><div class="line">    CABasicAnimation *pulse = [CABasicAnimation animationWithKeyPath:@<span class="string">"transform.scale"</span>];</div><div class="line">    pulse.timingFunction = [CAMediaTimingFunction <span class="keyword">function</span>WithName:kCAMediaTimingFunctionEaseInEaseOut];</div><div class="line">    pulse.duration = 0.08;</div><div class="line">    pulse.repeatCount = 1;</div><div class="line">    pulse.autoreverses = YES;</div><div class="line">    pulse.fromValue = [NSNumber numberWithFloat:0.7];</div><div class="line">    pulse.toValue = [NSNumber numberWithFloat:1.3];</div><div class="line">    [[tabbarbuttonArray[index] layer] addAnimation:pulse <span class="keyword">for</span>Key:nil];</div><div class="line">    </div><div class="line">    _index = index;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href="/2017/01/09/tabBarItem点击动画/#comment" class="comment-link">评论</a>
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2016-11-09T06:15:36.000Z"><a href="/2016/11/09/Java学习笔记-线程/">2016-11-09</a></time>
       
       
@@ -434,49 +474,6 @@
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2016-11-08T07:02:04.000Z"><a href="/2016/11/08/Java学习笔记/">2016-11-08</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2016/11/08/Java学习笔记/">Java学习笔记--方法</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><p>用于初始化参数。所有的数字变量全部设置为0，所有的boolean类型全部设置为false，所有的对象类型全部设置为null。</p>
-<p>###设计自己的构造方法：<br>1.方法名和类名相同；<br>2.没有返回值<br>注：如果实现了有参的构造方法，系统不再自动提供无参的构造方法，必须自己实现。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">public class Colin &#123;</div><div class="line"></div><div class="line">	String name;</div><div class="line">	String sex;</div><div class="line">	int age;</div><div class="line">	</div><div class="line">	//无参构造方法</div><div class="line">	<span class="function"><span class="title">Colin</span></span>()&#123;</div><div class="line">		name = null;</div><div class="line">		sex = null;</div><div class="line">		age = 0;</div><div class="line">	&#125;</div><div class="line">	//有参构造方法</div><div class="line">	Colin(String name, String sex, int age)&#123;</div><div class="line">		this.name=name;</div><div class="line">		this.sex=sex;</div><div class="line">		this.age=age;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	public static void main(String[] args)&#123;</div><div class="line">		//有参数</div><div class="line">		Colin c = new Colin();</div><div class="line">		//无参数</div><div class="line">		Colin co = new Colin(<span class="string">"colin"</span>,<span class="string">"man"</span>,25);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="方法的重载"><a href="#方法的重载" class="headerlink" title="方法的重载"></a>方法的重载</h2><p>在同一个类中可以有多个方法共享同一个名称，只要他们的参数不一样就行。<br>根据参数类型和参数数量来决定要调用的方法。<br>重载：具有相同的方法名称，不同的参数列表。<br>不同的参数列表指的是：参数类型不同、参数数量不同、参数顺序不同。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public class Colining &#123;</div><div class="line">	public String study(String name)&#123;</div><div class="line">		String username = name;</div><div class="line">		<span class="built_in">return</span> username;</div><div class="line">	&#125;</div><div class="line">	public String <span class="function"><span class="title">study</span></span>()&#123;</div><div class="line">		<span class="built_in">return</span> <span class="string">"colin"</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href="/2016/11/08/Java学习笔记/#comment" class="comment-link">评论</a>
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
 
 <nav id="pagination">
   
@@ -516,6 +513,10 @@
   <ul class="entry">
     
       <li>
+        <a href="/2017/01/09/tabBarItem点击动画/">tabBarItem点击动画</a>
+      </li>
+    
+      <li>
         <a href="/2016/11/09/Java学习笔记-线程/">Java学习笔记--线程</a>
       </li>
     
@@ -529,10 +530,6 @@
     
       <li>
         <a href="/2016/11/08/Java学习笔记-接口/">Java学习笔记--接口</a>
-      </li>
-    
-      <li>
-        <a href="/2016/11/08/Java学习笔记-抽象类/">Java学习笔记--抽象类</a>
       </li>
     
   </ul>
@@ -555,7 +552,7 @@
   <footer id="footer" class="inner"><div class="alignleft">
   <p>
   
-  &copy; 2016 liaohui
+  &copy; 2017 liaohui
   
   All rights reserved.</p>
 </div>
